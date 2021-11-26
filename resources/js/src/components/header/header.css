@@ -1,0 +1,65 @@
+/* Damale, Maitreyee Avinash - 1001878520 
+   Shaikh, Sarah Fatema- 1001855185
+   Begum, Fatima Zohra - 1001880881 */
+   
+.header {
+    margin-top: 60px;
+  }
+.headerTitles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lora', serif;
+    color:black;
+    
+}
+.headerImg{
+    width: 100%;
+    height: 600px;
+    /* margin-top: 20px; */
+    object-fit:cover;
+}
+.headerTitleSm{
+    position: absolute;
+    top: 38%;
+    font-size: 40px;
+}
+.headerTitleLg{
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 13px 34px;
+    font-size: 13px;
+    background: transparent;
+    cursor: pointer;
+   
+    
+}
+.hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: ls;
+}
+.hero-btn1{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 13px 34px;
+    font-size: 13px;
+    background: transparent;
+    cursor: pointer;
+   
+    
+}
+.hero-btn1:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: ls;
+}

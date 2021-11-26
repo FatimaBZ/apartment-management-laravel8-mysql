@@ -1,0 +1,74 @@
+/* Damale, Maitreyee Avinash - 1001878520 
+   Shaikh, Sarah Fatema- 1001855185
+   Begum, Fatima Zohra - 1001880881 */
+
+.main-content{
+    background: url(../../images/Housing.jpg) no-repeat left;
+    background-size: 70%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+  }
+  .inner-container{
+    width: 30%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 150px;
+  }
+  
+  .inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+  }
+  .text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+  }
+  
+  .hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color:black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  @media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
+    }
+  }
+  
+  @media screen and (max-width:1000px){
+    .main-content{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container{
+        width: 100%;
+    }
+  }
+  
+  @media screen and (max-width:600px){
+    .main-content{
+        padding: 10;
+    }
+    .inner-container{
+        padding: 0px;
+    }
+  }
+  @media screen and (max-width:700px){
+    .main-content{
+      background-size: 100%;
+      padding: 100px 40px;
+    }
+    .inner-container{
+      width: 50%;
+    }
+  }

@@ -1,0 +1,10 @@
+/* Damale, Maitreyee Avinash - 1001878520 
+   Shaikh, Sarah Fatema- 1001855185
+   Begum, Fatima Zohra - 1001880881 */
+.posts{
+    flex: 9;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+

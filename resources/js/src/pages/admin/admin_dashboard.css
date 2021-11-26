@@ -1,0 +1,259 @@
+@import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
+/* Damale, Maitreyee Avinash - 1001878520 
+   Shaikh, Sarah Fatema- 1001855185
+   Begum, Fatima Zohra - 1001880881 */
+.home-section{
+    position: relative;
+  background: #f5f5f5;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+
+}
+/* .sidebar.active ~ .home-section{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+.home-section nav{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 240px);
+  left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+.sidebar.active ~ .home-section nav{
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+.home-section nav .sidebar-button{
+    display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+.home-section nav .sidebar-button i{
+    font-size: 35px;
+    margin-right: 10px;
+}
+
+.home-section nav .search-box{
+    position: relative;
+    height: 50px;
+    max-width: 550px;
+    width: 100%;
+    margin: 0 20px;
+}
+nav .search-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 0 15px;
+}
+nav .search-box .bx-search{
+    position: absolute;
+  height: 40px;
+  width: 40px;
+  background: #2697FF;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.4 ease;
+}
+.home-section nav .search-box .profile-details{
+    display: flex;
+  align-items: center;
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+}
+nav .profile-details .admin-name{
+    font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 10px;
+  white-space: nowrap;
+
+}
+nav .profile-details i{
+    color: #333;
+    font-size: 25px;
+} */
+
+.home-section .home-content{
+    position: relative;
+    padding-top: 104px;
+}
+.home-content .overview-boxes{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 26px;
+}
+.overview-boxes .box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 4 - 30px);
+  background: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.overview-boxes .box-topic{
+    font-size: 20px;
+    font-weight: 500;
+     
+}
+.overview-boxes .number{
+    display: inline-block;
+  font-size: 35px;
+  margin-top: -6px;
+  font-weight: 500;
+}
+.overview-boxes .box .building{
+    display: inline-block;
+  font-size: 32px;
+  height: 50px;
+  width: 50px;
+  background: #cce5ff;
+  line-height: 50px;
+  text-align: center;
+  color: #66b0ff;
+  border-radius: 12px;
+  margin: -15px 0 0 6px;
+}
+.overview-boxes .box .apartment{
+    display: inline-block;
+  font-size: 32px;
+  height: 50px;
+  width: 50px;
+  background: #cce5ff;
+  line-height: 50px;
+  text-align: center;
+  color: #66b0ff;
+  border-radius: 12px;
+  margin: -15px 0 0 6px;
+}
+.overview-boxes .box .garden{
+    display: inline-block;
+  font-size: 32px;
+  height: 50px;
+  width: 50px;
+  background: #cce5ff;
+  line-height: 50px;
+  text-align: center;
+  color: #66b0ff;
+  border-radius: 12px;
+  margin: -15px 0 0 6px;
+}
+.overview-boxes .box .visitor{
+    display: inline-block;
+  font-size: 32px;
+  height: 50px;
+  width: 50px;
+  background: #cce5ff;
+  line-height: 50px;
+  text-align: center;
+  color: #66b0ff;
+  border-radius: 12px;
+  margin: -15px 0 0 6px;
+}
+.home-section .owner-list{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+.home-content .owner-list .recent-owner{
+    width: 65%;
+    background: #fff;
+  padding: 20px 30px;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.home-content .owner-list .owner-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.owner-list .box .title{
+    font-size: 24px;
+    font-weight: 500;
+}
+.home-section .owner-list .box .topic{
+    font-size: 20px;
+    font-weight: 500;
+}
+.owner-list .box li{
+    list-style: none;
+    margin: 8px 0;
+}
+.owner-list .box li a{
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+
+
+/* Responsive Media Query */
+@media(max-width :1240px){
+    .sidebar{
+        width: 60px;
+    }
+    .sidebar.active{
+        width: 220px;
+    }
+    .home-section{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .sidebar.active ~ .home-section{
+        /* width: calc(100% - 220px); */
+        overflow: hidden;
+        left: 220px;
+      }
+    .home-section nav{
+        width: calc(100% - 60px);
+        left: 60px;
+
+    }
+    .sidebar.active ~ .home-section nav{
+        width: calc(100% - 220px);
+        left: 220px;
+      }
+}
+@media(max-width:1018px){
+    .home-content .overview-boxes .box{
+        width: calc(100% / 2 - 5px);
+        margin-bottom: 15px;
+    }
+    .sidebar.active ~ .home-section nav .profile-details{
+        display: none;
+      }
+}

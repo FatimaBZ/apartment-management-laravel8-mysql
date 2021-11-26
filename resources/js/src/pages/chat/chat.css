@@ -1,0 +1,197 @@
+/* Damale, Maitreyee Avinash - 1001878520 
+   Shaikh, Sarah Fatema- 1001855185
+   Begum, Fatima Zohra - 1001880881 */
+   /*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }*/
+  /* .header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(../../images/background.jpeg);
+    background-position: center;
+    background-size: center;
+    position: relative;
+  
+  }
+  nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav img{
+    width: 150px;
+  
+  } 
+  .nav-links{
+    flex: 1;
+    text-align: right;
+  }
+  .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  .nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  .nav-links ul li:hover::after{
+    width: 100%;
+  }
+  .text-box{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+  }
+  .text-box h1{
+    font-size: 62px;
+  }
+  .text-box p{
+    margin: 10px 0 40px;
+    font-size: 30px;
+    color: white;
+  }
+  .hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid white;
+    padding: 13px 34px;
+    font-size: 13px;
+    background: transparent;
+    cursor: pointer;
+  }
+  .hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: ls;
+  }
+  nav .fa{
+    display: none;
+  }
+  @media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: ls;
+        }
+        nav .fa{
+            display: block;
+            color: #fff;
+            margin: 10px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        .nav-links ul{
+            padding: 30px;
+        }
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-image: linear-gradient(rgba(0,0,0,0.5), #3551b5), url(../../images/pool.jpeg);
+  } */
+  .chatbox{
+    width: 450px;
+    height: 390px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid #303030; */
+    box-shadow: 5px 5px 20px #000;
+    border-radius: 20px;
+  }
+  .chattop{
+    width: 100%;
+    height: 80px;
+    background: #2a2f32;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .chattop h1{
+    color: #fff;
+    margin: 0;
+    font-size: 30px;
+    text-align: center;
+    /* padding-left: 20px; */
+    padding-top: 10px;
+    font-family: monospace;
+  }
+  .mid{
+    width: 100%;
+    height: 260px;
+    background: #00af9c;
+    /* margin-top: -18px; */
+  }
+  .mid .chat{
+    width: 100%;
+    /* padding-top: 0px; */
+  }
+  .mid .chat h2{
+    margin: 0;
+    font-size: 30px;
+    color: #000;
+    padding: 30px 20px;
+  }
+  .chatmid .chat p{
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    background: #063b36;
+    padding: 50px 20px;
+    letter-spacing: 0.04em;
+  }
+  .chatinput{
+    width: 100%;
+    height: 79px;
+    overflow: hidden;
+    /* background: #090e11; */
+  }
+  .chatinput input{
+    width: 100%;
+    height: 70px;
+    font-size: 30px;
+    outline: none;
+    border: none;
+    padding-left: 30px;
+    padding-top: 0;
+    font-family: cursive;
+    background: #090e11;
+    color: #fff;
+  }
