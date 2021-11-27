@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
+use Session;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\user_details;
-//use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 
@@ -18,49 +17,7 @@ class UserDetailsController extends Controller
         ]);
     }
 
-//     private $status_code    =        200;
-//     // ------------ [ User Login ] -------------------
-//     public function userLogin(Request $request) {
-
-//         $validator          =       Validator::make($request->all(),
-//             [
-//                 "email"             =>          "required|email",
-//                 "password"           =>          "required"
-//                // "rolename"         =>          ""
-//             ]
-//         );
-
-//         if($validator->fails()) {
-//             return response()->json(["status" => "failed", "validation_error" => $validator->errors()]);
-//         }
-
-
-//         // check if entered email exists in db
-//         $email_status       =       user_details::where("email", $request->email)->first();
-
-
-//         // if email exists then we will check password for the same email
-
-//         if(!is_null($email_status)) {
-//             $password_status    =   user_details::where("email", $request->email)->where("passwrd", $request->password)->first();
-
-//             // if password is correct
-//             if(!is_null($password_status)) {
-//                 $user_details           =       $this->userDetail($request->email);
-
-//                 return response()->json(["status" => $this->status_code, "success" => true, "message" => "You have logged in successfully", "data" => $user_details]);
-//             }
-
-//             else {
-//                 return response()->json(["status" => "failed", "success" => false, "message" => "Unable to login. Incorrect password."]);
-//             }
-//         }
-
-//         else {
-//             return response()->json(["status" => "failed", "success" => false, "message" => "Unable to login. Email doesn't exist."]);
-//         }
-//     }
-//  // ------------------ [ User Detail ] ---------------------
+//  // ------------------ [ User Detail Through Email] ---------------------
 //     public function userDetail($email) {
 //         $user_details               =       array();
 //         if($email != "") {
@@ -70,31 +27,21 @@ class UserDetailsController extends Controller
 //     }
 
 
-
+ // ------------ [ User Login ] -------------------
     public function userLogin(Request $request){
-     //   $user_details =  new user_details;
-
-
-
-     
+  
       Log::info($request);
        $email = $request->input('email');
        $passwrd = $request->input('password');
-//     $payload = json_decode($request);
-     
-  
-//    $passwrd = $payload->password;
-   
-//    $email = $payload->email;
+
        Log::info($email);
        Log::info($passwrd);
         $user = user_details::where("email", $email)->where("passwrd", $passwrd)->first();
-        //user_details::where("email", $request->email)->where("passwrd", $request->password)->first();
-        //return $user_details;
+  
         Log::info('---------*********user details***********_------------');
         Log::info(json_encode($user));
         if(!is_null($user)){
-           // $request->session()->put('email', $email);
+            Session::put('email', $email);
             return response()->json(["status" => 200, "success" => true, "message" => "You have logged in successfully", "data" => $user]);
 
         }
@@ -108,7 +55,7 @@ class UserDetailsController extends Controller
         }
     }
 
-
+// ------------------ [All User Detail ] ---------------------
     public function index(){
         $users = user_details::all();
         return response()->json([

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contact;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Mail;
 
 class ContactUsFormController extends Controller
@@ -15,26 +15,20 @@ class ContactUsFormController extends Controller
     //     return view('contact');
     //   }
   
-      // Store Contact Form data
+      //--------------Store Contact Form data-----------------
       
       public function ContactUsForm(Request $request) {
   
-          // Form validation
-          $contacts =  new Contacts;
+          // Form inputs
+          $contacts =  new Contact;
           $contacts->firstname = $request->input('fname');
           $contacts->lastname = $request->input('lname');
           $contacts->email = $request->input('email');
           $contacts->phone= $request->input('phone');
           $contacts->query= $request->input('query');
   
-          $user_details->save();
-         
-          return response()->json([
-              'status'=> 200,
-              'message' => 'Contact Details Added Successfully',
-          ]);
-  
-     
+          $contacts->save();
+        
   
               //  Send mail to admin
         \Mail::send('mail', array(
@@ -47,10 +41,16 @@ class ContactUsFormController extends Controller
 
         ), function($message) use ($request){
             $message->from($request->email);
-            $message->to('begumfatimazohra@gmail.com', 'Admin')->subject($request->get('subject'));
+            $message->to('begumfatimazohra@gmail.com', 'Admin')->subject($request->get('query'));
         });
-          return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
-      }
+          //return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
+          return response()->json([
+            'status'=> 200,
+            'message' => 'Contact Details Added Successfully',
+            'data' => $contacts
+        ]);
+
+        }
   
 
 

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UserDetailsController;
 use App\Http\Controllers\API\ContactUsFormController;
+use App\Http\Controllers\API\BuildingDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\API\ContactUsFormController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+//---------------user_details table CRUD----------------------------------------------------
 Route::post('/user-login', [UserDetailsController::class, 'userLogin']);
 Route::get('/user/{email}', [UserDetailsController::class, 'userDetail']);
 Route::get('/dashboardUser',[UserDetailsController::class, 'index'] );
@@ -23,7 +24,13 @@ Route::get('/hello',[UserDetailsController::class, 'hello'] );
 Route::post('/addUser', [UserDetailsController::class, 'store']);
 
 
-Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm']);
+//---------------building_details table CRUD----------------------------------------------------
+Route::get('/dashboardBuilding', [BuildingDetailsController::class, 'index']);
+Route::post('/addBuilding', [BuildingDetailsController::class, 'store']);
+Route::delete('/building', [BuildingDetailsController::class, 'destroy']);
+
+//---------------contacts table CRUD---------------------------------------------------
+Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
