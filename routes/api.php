@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UserDetailsController;
 use App\Http\Controllers\API\ContactUsFormController;
 use App\Http\Controllers\API\BuildingDetailsController;
+use App\Http\Controllers\API\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,12 @@ Route::delete('/building', [BuildingDetailsController::class, 'destroy']);
 
 //---------------contacts table CRUD---------------------------------------------------
 Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+
+
+//-------------Image table CRUD--------------------------------------------------------
+Route::get('/images', [ImageController::class, 'index'])->name('images');
+Route::post('/images', [ImageController::class, 'upload'])->name('images');
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

@@ -40,10 +40,10 @@ class BuildingDetailsController extends Controller
 
    //----------[Delete a building]---------------
     public function destroy(Request $request){
-       $bname = $request->input('buildingName');
+       $bnum = $request->input('buildingId');
        Log::info('*****inside destroy building name*******');
-        Log::info($bname);
-        $deletedRows = building_details::where('bname', $bname)->delete();
+        Log::info($bnum);
+        $deletedRows = building_details::where('bnum', $bnum)->delete();
         Log::info($deletedRows);
      
         return response()->json([
