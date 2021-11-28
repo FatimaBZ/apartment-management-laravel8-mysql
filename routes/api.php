@@ -6,6 +6,7 @@ use App\Http\Controllers\API\UserDetailsController;
 use App\Http\Controllers\API\ContactUsFormController;
 use App\Http\Controllers\API\BuildingDetailsController;
 use App\Http\Controllers\API\ImageController;
+use App\Http\Controllers\API\VisitorDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,9 @@ Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name
 Route::get('/images', [ImageController::class, 'index'])->name('images');
 Route::post('/images', [ImageController::class, 'upload'])->name('images');
 
+
+//--------------Visitor Apartment Inquiry----------------------------------------------
+Route::post('/visitorApartmentInquiry', [VisitorDetailsController::class, 'storeApt']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
