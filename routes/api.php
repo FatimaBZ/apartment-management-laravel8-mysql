@@ -42,6 +42,7 @@ Route::post('/images', [ImageController::class, 'upload'])->name('images');
 
 //--------------Visitor Apartment Inquiry----------------------------------------------
 Route::post('/visitorApartmentInquiry', [VisitorDetailsController::class, 'storeApt']);
+Route::post('/visitorGardenInquiry', [VisitorDetailsController::class, 'storeGarden']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
