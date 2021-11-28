@@ -30,6 +30,7 @@ Route::post('/addUser', [UserDetailsController::class, 'store']);
 Route::get('/dashboardBuilding', [BuildingDetailsController::class, 'index']);
 Route::post('/addBuilding', [BuildingDetailsController::class, 'store']);
 Route::delete('/building', [BuildingDetailsController::class, 'destroy']);
+Route::put('/updateBuilding', [BuildingDetailsController::class, 'update']);
 
 //---------------contacts table CRUD---------------------------------------------------
 Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');

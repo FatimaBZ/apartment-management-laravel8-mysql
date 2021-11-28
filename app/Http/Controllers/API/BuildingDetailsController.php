@@ -48,9 +48,31 @@ class BuildingDetailsController extends Controller
      
         return response()->json([
             'status'=> 200,
-            'message' => 'Building Added Successfully',
+            'message' => 'Building Deleted Successfully',
             'data' => $deletedRows
         ]);
        
+    }
+
+    
+    //---------------------Update the specified resource in building_details table.
+     
+    public function update(Request $request)
+    {
+        $bnum = $request->input('id');
+        $building_details = building_details::where('bnum', $bnum)->first();
+        Log::info($building_details);
+        Log::info($building_details->bname);
+        $building_details->bname = $request->input('buildingName');
+        
+        $building_details->baddress = $request->input('address');
+       Log::info($building_details);
+        $building_details->update();
+
+        return response()->json([
+            'status'=> 200,
+            'message' => 'Building Updated Successfully',
+            
+        ]);
     }
 }
