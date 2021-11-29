@@ -7,6 +7,7 @@ use App\Http\Controllers\API\ContactUsFormController;
 use App\Http\Controllers\API\BuildingDetailsController;
 use App\Http\Controllers\API\ImageController;
 use App\Http\Controllers\API\VisitorDetailsController;
+use App\Http\Controllers\API\ServerRequestedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,20 @@ Route::post('/images', [ImageController::class, 'upload'])->name('images');
 
 //--------------Visitor Apartment Inquiry----------------------------------------------
 Route::post('/visitorApartmentInquiry', [VisitorDetailsController::class, 'storeApt']);
+
+//--------------Visitor Garden Inquiry----------------------------------------------
 Route::post('/visitorGardenInquiry', [VisitorDetailsController::class, 'storeGarden']);
+
+//--------------visitor CRUD----------------------------------------------------------
+Route::get('/dashboardVisitor', [VisitorDetailsController::class, 'index']);
+Route::get('/getVisitorForCrud', [VisitorDetailsController::class, 'visitorDashboardForCrud']);
+Route::post('/addVisitor', [VisitorDetailsController::class, 'store']);
+Route::delete('/deleteVisitor', [VisitorDetailsController::class, 'destroy']);
+Route::put('/updateVisitor', [VisitorDetailsController::class, 'update']);
+
+//------------------Service Requested-------------------------------------------------
+Route::get('/dashboardService', [ServerRequestedController::class, 'index']);
+Route::post('/storeServiceIncident', [ServerRequestedController::class, 'storeServiceIncident']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

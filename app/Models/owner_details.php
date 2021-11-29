@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class visitor extends Model
+class owner_details extends Model
 {
     use HasFactory;
-    public $table = 'visitor';
+    public $table = 'owner_details';
     public $timestamps = false;
-    public $primaryKey = 'id';
+    public $primaryKey = 'anum';
 }

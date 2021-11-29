@@ -13,6 +13,23 @@ use DB;
 
 class VisitorDetailsController extends Controller
 {
+
+    public function index()
+    {
+        $all_visitor = visitor::all();
+        return response()->json([
+            'status'=>200,
+            'visitorlist'=>$all_visitor,
+        ]);
+    }
+
+    public function visitorDashboardForCrud(){
+        $visitor_details = user_details::where('rolename','Visitor')->get();
+        return response()->json([
+            'status'=>200,
+            'visitor'=>$visitor_details,
+        ]);
+    }
   
     public function storeApt(Request $request)
     {
@@ -64,4 +81,51 @@ class VisitorDetailsController extends Controller
             'data' => $visitor_data
         ]);
     }
+
+    public function store(Request $request){
+
+        $new_visitor_details = DB::insert('insert into user_details (fname, lname, passwrd, rolename, email) values(?,?,?,?,?)',[ $request->input('firstName'),$request->input('lastName'),$request->input('passwrd'), 'Visitor', $request->input('email')]);
+        
+        return response()->json([
+            'status'=> 200,
+            'message' => 'Visitor Added Successfully to user_details table',
+            'data' => $new_visitor_details
+        ]);
+    }
+
+       //----------[Delete a visitor]---------------
+       public function destroy(Request $request){
+        $id = $request->input('empid');
+        Log::info('*****inside destroy visitor name*******');
+         Log::info($id);
+         $deletedRows = user_details::where('empid', $id)->where('rolename','Visitor')->delete();
+         Log::info($deletedRows);
+      
+         return response()->json([
+             'status'=> 200,
+             'message' => 'Building Deleted Successfully',
+             'data' => $deletedRows
+         ]);
+        
+     }
+
+     public function update(Request $request)
+     {
+         $id= $request->input('id');
+         $visitor_data = user_details::where('empid', $id)->first();
+         Log::info($visitor_data);
+         //Log::info($visitor_data->bname);
+         $visitor_data->fname = $request->input('firstName');
+         $visitor_data->lname = $request->input('lastName');
+         $visitor_data->passwrd = $request->input('passwrd');
+         $visitor_data->email = $request->input('email');
+        Log::info($visitor_data);
+         $visitor_data->update();
+ 
+         return response()->json([
+             'status'=> 200,
+             'message' => 'Visitor Data in user_details Table Updated Successfully',
+             
+         ]);
+     }
 }
