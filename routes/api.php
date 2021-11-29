@@ -7,7 +7,7 @@ use App\Http\Controllers\API\ContactUsFormController;
 use App\Http\Controllers\API\BuildingDetailsController;
 use App\Http\Controllers\API\ImageController;
 use App\Http\Controllers\API\VisitorDetailsController;
-use App\Http\Controllers\API\ServerRequestedController;
+use App\Http\Controllers\API\ServiceRequestedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,9 +55,11 @@ Route::post('/addVisitor', [VisitorDetailsController::class, 'store']);
 Route::delete('/deleteVisitor', [VisitorDetailsController::class, 'destroy']);
 Route::put('/updateVisitor', [VisitorDetailsController::class, 'update']);
 
-//------------------Service Requested-------------------------------------------------
-Route::get('/dashboardService', [ServerRequestedController::class, 'index']);
-Route::post('/storeServiceIncident', [ServerRequestedController::class, 'storeServiceIncident']);
+//------------------Service Requested/Incident Reported/Dashboard-------------------------------------------------
+Route::get('/dashboardService', [ServiceRequestedController::class, 'index']);
+Route::post('/storeServiceIncident', [ServiceRequestedController::class, 'storeServiceIncident']);
+Route::get('/dashboardIncident', [ServiceRequestedController::class, 'indexIncident']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

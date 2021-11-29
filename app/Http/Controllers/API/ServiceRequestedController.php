@@ -7,10 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Models\service_requested;
 use App\Models\owner_details;
 use App\Models\service_details;
+use App\Models\incident;
 use Illuminate\Support\Facades\Log;
 use DB;
 
-class ServerRequestedController extends Controller
+class ServiceRequestedController extends Controller
 {
     public function index()
     {
@@ -56,6 +57,21 @@ class ServerRequestedController extends Controller
             ]);
         }
  
+    }
+
+    public function indexIncident()
+    {
+        $incidents = DB::table('incident')
+        ->join('owner_details', 'incident.empid', '=', 'owner_details.ownerid') 
+        ->select('incident.id','incident.incident' ,'incident.empid', 'owner_details.firstname','owner_details.lastname')->distinct()
+        ->get();
+        Log::info($incidents);
+      //  $incidents_grouped = $incidents
+      //  Log::info($incidents_grouped);
+        return response()->json([
+            'status'=>200,
+            'incident'=>$incidents,
+        ]);
     }
 
 
