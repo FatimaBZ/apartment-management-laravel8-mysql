@@ -14,6 +14,7 @@ use App\Http\Controllers\API\GardenController;
 use App\Http\Controllers\API\AnalyticsController;
 use App\Http\Controllers\API\PlantsController;
 use App\Http\Controllers\API\PoolController;
+use App\Http\Controllers\API\IncidentController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -98,6 +99,13 @@ Route::get('/dashboardPool', [PoolController::class, 'index']);
 Route::post('/addPool',[PoolController::class,'store']);
 Route::delete('/deletePool',[PoolController::class,'destroy']);
 Route::put('editPool',[PoolController::class,'update']);
+
+
+//-------------------------------Incident CRUD-----------------------------------------
+//Route::get('/dashboardIncident', [IncidentController::class, 'index']);
+Route::post('/addIncident', [IncidentController::class, 'storeServiceIncident']);
+Route::delete('/deleteIncident', [IncidentController::class, 'destroy']);
+Route::put('/editIncident',[IncidentController::class,'update']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
