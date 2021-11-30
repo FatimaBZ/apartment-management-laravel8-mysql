@@ -11,6 +11,7 @@ use App\Http\Controllers\API\ServiceRequestedController;
 use App\Http\Controllers\API\ApartmentDetailsController;
 use App\Http\Controllers\API\ManagerDetailsController;
 use App\Http\Controllers\API\GardenController;
+use App\Http\Controllers\API\AnalyticsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -79,6 +80,11 @@ Route::get('/dashboardGarden', [GardenController::class, 'index']);
 Route::post('/addGarden', [GardenController::class, 'store']);
 Route::delete('/deleteGarden', [GardenController::class, 'destroy']);
 Route::put('/editGarden',[GardenController::class,'update']);
+
+
+//-----------------------------Dashboard Data------------------------------------------
+Route::get('/dashboardData', [AnalyticsController::class, 'index']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
