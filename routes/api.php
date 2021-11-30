@@ -12,6 +12,7 @@ use App\Http\Controllers\API\ApartmentDetailsController;
 use App\Http\Controllers\API\ManagerDetailsController;
 use App\Http\Controllers\API\GardenController;
 use App\Http\Controllers\API\AnalyticsController;
+use App\Http\Controllers\API\PlantsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -85,6 +86,11 @@ Route::put('/editGarden',[GardenController::class,'update']);
 //-----------------------------Dashboard Data------------------------------------------
 Route::get('/dashboardData', [AnalyticsController::class, 'index']);
 
+//-----------------------------Plant CRUD----------------------------------------------
+Route::get('/dashboardPlant', [PlantsController::class, 'index']);
+Route::delete('/deletePlant',[PlantsController::class,'destroy']);
+Route::post('/addPlant',[PlantsController::class,'store']);
+Route::put('editPlant',[PlantsController::class,'update']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
