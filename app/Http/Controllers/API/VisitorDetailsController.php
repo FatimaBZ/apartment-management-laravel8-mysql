@@ -82,29 +82,29 @@ class VisitorDetailsController extends Controller
         ]);
     }
 
-    public function store(Request $request){
+    // public function store(Request $request){
 
-        $new_visitor_details = DB::insert('insert into user_details (fname, lname, passwrd, rolename, email) values(?,?,?,?,?)',[ $request->input('firstName'),$request->input('lastName'),$request->input('passwrd'), 'Visitor', $request->input('email')]);
+    //     $new_visitor_details = DB::insert('insert into visitor (fname, lname, anum, gardenName, message) values(?,?,?,?,?)',[ $request->input('firstName'),$request->input('lastName'),$request->input('apartmentNumber'), 'Visitor', $request->input('email')]);
         
-        return response()->json([
-            'status'=> 200,
-            'message' => 'Visitor Added Successfully to user_details table',
-            'data' => $new_visitor_details
-        ]);
-    }
+    //     return response()->json([
+    //         'status'=> 200,
+    //         'message' => 'Visitor Added Successfully to user_details table',
+    //         'data' => $new_visitor_details
+    //     ]);
+    // }
 
        //----------[Delete a visitor]---------------
        public function destroy(Request $request){
-        $id = $request->input('empid');
+        $id = $request->input('id');
         Log::info('*****inside destroy visitor name*******');
          Log::info($id);
-         $deletedRows = user_details::where('empid', $id)->where('rolename','Visitor')->delete();
-         Log::info($deletedRows);
+         $deletedRow = visitor::where('id', $id)->delete();
+         Log::info($deletedRow);
       
          return response()->json([
              'status'=> 200,
-             'message' => 'Building Deleted Successfully',
-             'data' => $deletedRows
+             'message' => 'Visitor Request Deleted Successfully',
+             'data' => $deletedRow
          ]);
         
      }

@@ -8,7 +8,9 @@ use App\Http\Controllers\API\BuildingDetailsController;
 use App\Http\Controllers\API\ImageController;
 use App\Http\Controllers\API\VisitorDetailsController;
 use App\Http\Controllers\API\ServiceRequestedController;
-
+use App\Http\Controllers\API\ApartmentDetailsController;
+use App\Http\Controllers\API\ManagerDetailsController;
+use App\Http\Controllers\API\GardenController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -50,16 +52,33 @@ Route::post('/visitorGardenInquiry', [VisitorDetailsController::class, 'storeGar
 
 //--------------visitor CRUD----------------------------------------------------------
 Route::get('/dashboardVisitor', [VisitorDetailsController::class, 'index']);
-Route::get('/getVisitorForCrud', [VisitorDetailsController::class, 'visitorDashboardForCrud']);
+//Route::get('/getVisitorForCrud', [VisitorDetailsController::class, 'visitorDashboardForCrud']);
 Route::post('/addVisitor', [VisitorDetailsController::class, 'store']);
 Route::delete('/deleteVisitor', [VisitorDetailsController::class, 'destroy']);
-Route::put('/updateVisitor', [VisitorDetailsController::class, 'update']);
+//Route::put('/updateVisitor', [VisitorDetailsController::class, 'update']);
 
-//------------------Service Requested/Incident Reported/Dashboard-------------------------------------------------
+//------------------Service Requested/Incident Reported/Dashboard-----------------------
 Route::get('/dashboardService', [ServiceRequestedController::class, 'index']);
 Route::post('/storeServiceIncident', [ServiceRequestedController::class, 'storeServiceIncident']);
 Route::get('/dashboardIncident', [ServiceRequestedController::class, 'indexIncident']);
 
+//---------------------Apartment CRUD---------------------------------------------------
+Route::get('/dashboardApartment', [ApartmentDetailsController::class, 'index']);
+Route::post('/addApartment', [ApartmentDetailsController::class, 'storeApt']);
+Route::delete('/deleteApartment', [ApartmentDetailsController::class, 'destroy']);
+Route::put('/updateApartment', [ApartmentDetailsController::class, 'updateApartment']);
+
+//-----------------------Owner CRUD-----------------------------------------------------
+Route::get('/dashboardOwner', [ApartmentDetailsController::class, 'indexOwnedApartment']);
+
+//------------------------Manager CRUD--------------------------------------------------
+Route::get('/dashboardManager', [ManagerDetailsController::class, 'managerDetailsForCrud']);
+
+//---------------------------Garden CRUD------------------------------------------------
+Route::get('/dashboardGarden', [GardenController::class, 'index']);
+Route::post('/addGarden', [GardenController::class, 'store']);
+Route::delete('/deleteGarden', [GardenController::class, 'destroy']);
+Route::put('/editGarden',[GardenController::class,'update']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
