@@ -78,6 +78,9 @@ Route::get('/dashboardOwner', [ApartmentDetailsController::class, 'indexOwnedApa
 
 //------------------------Manager CRUD--------------------------------------------------
 Route::get('/dashboardManager', [ManagerDetailsController::class, 'managerDetailsForCrud']);
+Route::post('/addManager', [ManagerDetailsController::class, 'store']);
+Route::delete('/deleteManager', [ManagerDetailsController::class, 'destroy']);
+Route::put('/editManager', [ManagerDetailsController::class, 'update']);
 
 //---------------------------Garden CRUD------------------------------------------------
 Route::get('/dashboardGarden', [GardenController::class, 'index']);
@@ -110,7 +113,6 @@ Route::put('/editIncident',[IncidentController::class,'update']);
 
 
 //-------------------------------Service CRUD-----------------------------------------
-
 Route::post('/addService', [ServiceController::class, 'store']);
 Route::delete('/deleteService', [ServiceController::class, 'destroy']);
 Route::put('/editService',[ServiceController::class,'update']);
